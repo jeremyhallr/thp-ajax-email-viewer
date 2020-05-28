@@ -10,6 +10,8 @@
 
 # Task.destroy_all
 
+Email.destroy_all
+
 require 'faker'
 # 3.times do
 #   my_category = Category.create(title: Faker::Book.genre)
@@ -23,5 +25,5 @@ require 'faker'
 # end
 
 8.times do
-  Email.create(object: Faker::Book.title, body: Faker::Hacker.say_something_smart)
+  Email.create(object: Faker::Book.title, body: Faker::Hacker.say_something_smart, read: false)
 end

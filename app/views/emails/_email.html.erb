@@ -1,7 +1,11 @@
 <tr id="<%= email.id %>">
   <td style="width: 25%">
   <%= link_to(email, remote: true) do %>
-    <strong><%= email.object %></strong>
+    <% if email.read == false %>
+      <strong id="object-<%= email.id %>" class="text-danger"><%= email.object %></strong>
+    <% else %>
+      <strong id="object-<%= email.id %>"><%= email.object %></strong>
+    <% end %>
   <% end %>
   </td>
   <td class="text-justify"></td>
