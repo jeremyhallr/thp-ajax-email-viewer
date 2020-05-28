@@ -1,0 +1,9 @@
+<li id="<%= task.id %>">
+  <%= task.title  %>
+  <% unless task.deadline.nil? %>
+    , to read: <%= task.deadline.strftime('%D')  %>
+  <% end %>
+  <div>
+    <%= link_to "Delete", task_path(task.id), :confirm => "Are you sure?", method: :delete, class: "btn-sm btn-danger", remote: true %>
+  </div>
+</li>

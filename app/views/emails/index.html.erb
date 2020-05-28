@@ -1,0 +1,31 @@
+<div class="container">
+  <h1 class="mb-3 text-center">Index</h1>
+</div>
+
+<div class="container">
+  <div class="text-center">
+    <%= link_to "Recevoir un email", emails_path, method: :post, remote: true, class: "mb-3 btn btn-primary" %>
+  </div>
+  <div class="row">
+    <div class=col-sm-6>
+
+      <table id="email-list">
+        <tr>
+          <th style="width:100%" class="h2">Liste des emails</th>
+        </tr>
+        <% @emails.each do |email| %>
+        <tr>
+          <%= render 'email', email: email %>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="col-sm-6">
+      <div id="show-email">
+        <h2>Email sélectionné</h2>
+        <span id="object-email"></span>
+      </div>
+    </div>
+  </div>
+</div>
