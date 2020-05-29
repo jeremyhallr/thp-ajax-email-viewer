@@ -1,1 +1,2 @@
 document.getElementById("object-email").innerHTML = "<%= j render 'show', email: @email %>";
+document.getElementById("object-<%= @email.id %>").classList.remove('text-danger')

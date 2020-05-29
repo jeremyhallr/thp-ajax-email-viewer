@@ -1,3 +1,7 @@
-if ( document.getElementById("object-<%= @email.id %>").classList.contains('text-danger') )
-document.getElementById("object-<%= @email.id %>").classList.toggle('text-danger');
-else (document.getElementById("object-<%= @email.id %>").classList.add('text-danger') )
+if (<%= @email.read %>) {
+  document.getElementById('read-email').innerHTML = "Marquer comme non-lu"
+  document.getElementById("object-<%= @email.id %>").classList.remove('text-danger')
+} else {
+  document.getElementById('read-email').innerHTML = "Marque comme lu"
+  document.getElementById("object-<%= @email.id %>").classList.add('text-danger')
+}

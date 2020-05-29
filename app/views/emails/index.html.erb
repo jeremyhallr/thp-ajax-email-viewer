@@ -7,9 +7,9 @@
     <%= link_to "Recevoir un email", emails_path, method: :post, remote: true, class: "mb-3 btn btn-primary" %>
   </div>
   <div class="row">
-    <div class=col-sm-6>
+    <div class=col-sm-5>
 
-      <table id="email-list">
+      <table class="table" id="email-list">
         <tr>
           <th style="width:100%" class="h2">Liste des emails</th>
         </tr>
@@ -21,11 +21,18 @@
       </table>
     </div>
 
-    <div class="col-sm-6">
-      <div id="show-email">
-        <h2>Email sélectionné</h2>
-        <span id="object-email"></span>
-      </div>
+    <div class="col-7">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" class="h2">Content</th>
+          </tr>
+        </thead>
+        <tbody id="object-email">
+
+        </tbody>
+      </table>
     </div>
+
   </div>
 </div>
